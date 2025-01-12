@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Imports do seu projeto (semelhantes aos do experimento 3):
 from ..utils.city import get_neighbors, MAX_X, MAX_Y
-from ..utils.costs import cost_c1, cost_c2, cost_c3, cost_c4
+from ..utils.costs import cost_functions
 from ..utils.heuristics import h1_euclidean_10, h2_manhattan_10
 
 from ..algorithms.search_astar import a_star_search
@@ -85,14 +85,6 @@ def main(output_folder="./at1/experiments/experiment_5_files"):
 
     Guarda os resultados (caminho, custo, nós visitados, gerados etc.) em um .txt.
     """
-
-    # Lista das funções de custo
-    cost_functions = [
-        ('C1', cost_c1),
-        ('C2', cost_c2),
-        ('C3', cost_c3),
-        ('C4', cost_c4),
-    ]
     
     # Lista das heurísticas
     heuristics = [
@@ -127,7 +119,7 @@ def main(output_folder="./at1/experiments/experiment_5_files"):
             #    (passando por pelo menos 1 farmácia)
             ###########################################
             (cost_name, cf) = cost_functions[0]  # 'C1', cost_c1
-            (heur_name, hf) = ('H1', h1_euclidean_10)
+            (heur_name, hf) = heuristics[0] # 'H1', h1_euclidean_10
 
             result = a_star_with_at_least_one_pharmacy(
                 start_state, goal_state, pharmacies,

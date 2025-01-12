@@ -3,24 +3,16 @@ import os
 from datetime import datetime
 
 from ..utils.city import get_neighbors, MAX_X, MAX_Y
-from ..utils.costs import cost_c1, cost_c2, cost_c3, cost_c4
+from ..utils.costs import cost_functions
 from ..algorithms.search_bfs import bfs
 from ..algorithms.search_dfs import dfs
 from ..algorithms.search_uniform import uniform_cost_search
 
 
 def main(output_folder="./at1/experiments/experiment_1_files"):
-    # Lista das funções de custo
-    cost_functions = [
-        ('C1', cost_c1),
-        ('C2', cost_c2),
-        ('C3', cost_c3),
-        ('C4', cost_c4),
-    ]
-    
     # Gerar um nome de arquivo único baseado na data e hora
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_filename = os.path.join(output_folder, f"results_{timestamp}.txt")
+    output_filename = os.path.join(output_folder, f"results_1_{timestamp}.txt")
     
     # Cria a pasta de saída se não existir
     os.makedirs(output_folder, exist_ok=True)

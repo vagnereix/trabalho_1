@@ -20,7 +20,7 @@ def main(output_folder="./at1/experiments/experiment_4_files"):
 
     # Gera um nome de arquivo único baseado na data/hora
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_filename = os.path.join(output_folder, f"results_{timestamp}.txt")
+    output_filename = os.path.join(output_folder, f"results_4_{timestamp}.txt")
 
     # Cria a pasta de saída se não existir
     os.makedirs(output_folder, exist_ok=True)

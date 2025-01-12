@@ -1,5 +1,3 @@
-# costs.py
-
 def cost_c1(current_state, next_state, depth):
     """
     C1: Todas as ações têm custo 10.
@@ -49,3 +47,10 @@ def cost_c4(current_state, next_state, depth):
     else:
         # horizontal
         return 5 + (10 - (depth % 11))
+
+cost_functions = [
+    ('C1', cost_c1),
+    ('C2', cost_c2),
+    ('C3', cost_c3),
+    ('C4', cost_c4),
+]

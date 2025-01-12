@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Ajuste se necessário o caminho de import:
 from ..utils.city import get_neighbors, MAX_X, MAX_Y
-from ..utils.costs import cost_c1, cost_c2, cost_c3, cost_c4
+from ..utils.costs import cost_functions
 from ..utils.heuristics import h1_euclidean_10, h2_manhattan_10
 
 from ..algorithms.search_uniform import uniform_cost_search
@@ -20,14 +20,6 @@ def main(output_folder="./at1/experiments/experiment_2_files"):
     Os resultados são salvos em um arquivo de texto na pasta 'experiment_2_files'.
     """
     
-    # Lista de funções de custo
-    cost_functions = [
-        ('C1', cost_c1),
-        ('C2', cost_c2),
-        ('C3', cost_c3),
-        ('C4', cost_c4),
-    ]
-    
     # Lista de heurísticas (para A*)
     heur_functions = [
         ('H1', h1_euclidean_10),
@@ -36,7 +28,7 @@ def main(output_folder="./at1/experiments/experiment_2_files"):
     
     # Gera um nome de arquivo único baseado na data e hora
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_filename = os.path.join(output_folder, f"results_{timestamp}.txt")
+    output_filename = os.path.join(output_folder, f"results_2_{timestamp}.txt")
     
     # Cria a pasta de saída se não existir
     os.makedirs(output_folder, exist_ok=True)

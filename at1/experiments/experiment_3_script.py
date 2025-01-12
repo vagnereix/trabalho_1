@@ -3,8 +3,8 @@ import os
 from datetime import datetime
 
 from ..utils.city import get_neighbors, MAX_X, MAX_Y
-from ..utils.costs import cost_c1, cost_c2, cost_c3, cost_c4
-from ..utils.heuristics import h1_euclidean_10, h2_manhattan_10
+from ..utils.costs import cost_functions
+from ..utils.heuristics import heuristics
 
 from ..algorithms.search_greedy import greedy_search
 from ..algorithms.search_astar import a_star_search
@@ -21,23 +21,10 @@ def main(output_folder="./at1/experiments/experiment_3_files"):
     Guarda os resultados em um arquivo .txt, incluindo caminho, custo,
     nós visitados/gerados etc.
     """
-    # Lista das funções de custo
-    cost_functions = [
-        ('C1', cost_c1),
-        ('C2', cost_c2),
-        ('C3', cost_c3),
-        ('C4', cost_c4),
-    ]
-    
-    # Lista das heurísticas
-    heuristics = [
-        ('H1', h1_euclidean_10),
-        ('H2', h2_manhattan_10),
-    ]
     
     # Gera um nome de arquivo único baseado na data/hora
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_filename = os.path.join(output_folder, f"results_{timestamp}.txt")
+    output_filename = os.path.join(output_folder, f"results_3_{timestamp}.txt")
 
     # Cria a pasta de saída se não existir
     os.makedirs(output_folder, exist_ok=True)
