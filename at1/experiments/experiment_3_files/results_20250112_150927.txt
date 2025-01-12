@@ -1,0 +1,3 @@
+# Experimento 4: BFS e DFS com vizinhança randomizada
+
+## Par 1: start=(25, 15), goal=(28, 24)
